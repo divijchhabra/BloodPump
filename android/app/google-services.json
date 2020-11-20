@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "11167469768",
+    "firebase_url": "https://bloodpump-4bf85.firebaseio.com",
+    "project_id": "bloodpump-4bf85",
+    "storage_bucket": "bloodpump-4bf85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11167469768:android:ec991bbf59ffa8890d95fd",
+        "android_client_info": {
+          "package_name": "com.divijc.bloodpump"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11167469768-h8ca4boff8usu9f2ddf0dpk40ee1r77c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYOHSqLGaq09weVQOJBMV8L7xi40wk3vs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11167469768-h8ca4boff8usu9f2ddf0dpk40ee1r77c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
