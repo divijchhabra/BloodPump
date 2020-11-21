@@ -1,7 +1,9 @@
 
 
 import 'package:flutter/material.dart';
-
+import  'package:nominatim_location_picker/nominatim_location_picker.dart';
+import 'writePostData.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class PostScreen extends StatefulWidget {
   const PostScreen({Key key}) : super(key: key);
@@ -13,6 +15,26 @@ class PostScreen extends StatefulWidget {
 class _PostScreenState extends State<PostScreen> {
 
   int _radioValue = 0;
+  String PostLocation='';
+  String description,name,bloodgroup,uid;
+  FirebaseAuth _auth = FirebaseAuth.instance;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getCurrentUser();
+  }
+
+  void getCurrentUser()  {
+
+    User user=  _auth.currentUser;
+
+
+    uid=user.uid;
+
+
+  }
+
 
   void _handleRadioValueChange(int value) {
     setState(() {
@@ -27,6 +49,25 @@ class _PostScreenState extends State<PostScreen> {
           break;
       }
     });
+  }
+
+  Future getLocationWithNominatim() async {
+    Map result = await showDialog(
+        context: context,
+        builder: (BuildContext ctx) {
+          return NominatimLocationPicker(
+            searchHint: 'Search Location',
+            awaitingForLocation: "Loading....",
+          );
+        });
+    if (result != null) {
+      Map maplocation=result;
+
+      print(result);
+
+    } else {
+      return;
+    }
   }
 
   @override
@@ -81,6 +122,11 @@ class _PostScreenState extends State<PostScreen> {
                       borderRadius: BorderRadius.circular(40.0),
                     ),
                     onPressed: (){
+                      Navigator.pop(context);
+                      setState(() {
+                        writePostData(neededbloodgroup: 'B+',uid:uid,description: description,Postname: name).PostRequests();
+                      });
+
 
                     },
 
@@ -91,6 +137,8 @@ class _PostScreenState extends State<PostScreen> {
                         fontWeight: FontWeight.bold,
                         fontSize: 15.0,
                       ),
+
+
                     ),
 
                   ),
@@ -101,9 +149,13 @@ class _PostScreenState extends State<PostScreen> {
               ),
 
               TextField(
+                onChanged: (val){
+                  name=val;
+                },
 
                 decoration: InputDecoration(
                   labelText: 'Enter your Name',
+
 
                 ),
               ),
@@ -111,6 +163,9 @@ class _PostScreenState extends State<PostScreen> {
               TextField(
                 keyboardType: TextInputType.multiline,
                 maxLines: 3,
+                onChanged: (val){
+                  description=val;
+                },
 
                 style: TextStyle(
 
@@ -192,7 +247,22 @@ class _PostScreenState extends State<PostScreen> {
             ],
             ),
               TextField(
+                style: TextStyle(
+                  fontSize: 15.0,
+                ),
+                textInputAction: TextInputAction.go,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.add_location),
+                  hintText: PostLocation,
 
+                  hintStyle: TextStyle(color: Colors.grey, fontSize: 15.0),
+                  contentPadding:
+                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                ),
+                onTap: ()async {
+                  await getLocationWithNominatim();
+
+                },
               ),
             ],
 

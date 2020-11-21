@@ -1,7 +1,9 @@
 
 import 'package:blood_pump/HomeScreen.dart';
 import 'package:blood_pump/ProfileScreen.dart';
+import 'LeaderBoardScreen.dart';
 import 'package:flutter/material.dart';
+import 'ChatScreen.dart';
 import 'PostScreen.dart';
 
 class BottomNavigationBarController extends StatefulWidget {
@@ -21,10 +23,10 @@ class _BottomNavigationBarControllerState
     ProfileScreen(
       key: PageStorageKey('Page2'),
     ),
-    ProfileScreen(
+    ChatScreen(
       key: PageStorageKey('Page3'),
     ),
-    PostScreen(
+    LeaderBoardScreen(
       key: PageStorageKey('Page4'),
     ),
 
@@ -43,10 +45,10 @@ class _BottomNavigationBarControllerState
       BottomNavigationBarItem(
           icon: Icon(Icons.home_filled), label: 'Home'),
       BottomNavigationBarItem(
-          icon: Icon(Icons.leaderboard), label: 'Post'),
+          icon: Icon(Icons.person_rounded), label: 'Profile'),
 
       BottomNavigationBarItem(
-          icon: Icon(Icons.person_rounded), label: 'Profile'),
+          icon: Icon(Icons.chat), label: 'Chat'),
 
       BottomNavigationBarItem(
 

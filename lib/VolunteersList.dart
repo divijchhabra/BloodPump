@@ -56,6 +56,7 @@ class _VolunteersListState extends State<VolunteersList> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey.shade200,
+
       child: ListView.builder(
           itemCount : UserProfileList.length ,
           itemBuilder : (context,index){
@@ -70,6 +71,7 @@ class _VolunteersListState extends State<VolunteersList> {
 
                     backgroundImage: NetworkImage('https://ui-avatars.com/api/?name=${UserProfileList[index]['name']}'),
                   ),
+
                 ),
               ),
             );
@@ -78,3 +80,4 @@ class _VolunteersListState extends State<VolunteersList> {
     );
   }
 }
+

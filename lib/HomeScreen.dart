@@ -61,7 +61,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
   }
 
 
-
     
 
 
@@ -105,9 +104,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
           Text("Call Screen"),
         ],
       ),
-      floatingActionButton :FloatingActionButton(
+      floatingActionButton :FloatingActionButton.extended(
 
-        child: Icon(Icons.add,),
+
         backgroundColor: Colors.red.shade700,
         hoverColor: Colors.black,
         elevation: 10,
@@ -124,8 +123,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
 
 
           );
-        }
-    ),
+        },
+        label: Text('Blood Request',style: TextStyle(
+
+        ),),
+        icon: Icon(Icons.add,), ),
     );
   }
 }

@@ -41,6 +41,9 @@ dev_dependencies:
   cloud_firestore: ^0.14.3
   bottom_navy_bar: ^5.5.0
   decorative_app_bar: ^0.0.2
+  google_maps_webservice: ^0.0.18
+  flutter_google_places: ^0.2.6
+  nominatim_location_picker: ^0.1.0+7
 
   flutter_test:
     sdk: flutter
