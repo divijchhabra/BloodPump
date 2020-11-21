@@ -142,7 +142,7 @@ bool showSpinner =false;
     return Scaffold(
       body: SafeArea(
         child: Container(
-          color: Colors.red.shade700,
+          color: Colors.white,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -155,11 +155,16 @@ bool showSpinner =false;
 
                       text: 'Blood Pump',
                       textAlign: TextAlign.center,
+                      textStyle:TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                          fontSize: 80,
+                      ),
 
-                      waveColor: Colors.white,
-                      boxBackgroundColor: Colors.red.shade700,
-                      textStyle: TextStyle(fontSize: 80, fontWeight: FontWeight.bold),
-                      waveDuration: Duration(seconds:4),
+                      waveColor: Colors.redAccent.shade700,
+                      boxBackgroundColor: Colors.white,
+
+                      waveDuration: Duration(seconds:2),
                       // boxHeight: 300,
                     ),
                   ),
@@ -169,11 +174,16 @@ bool showSpinner =false;
               Expanded(
                 child: Center(
                   child: Material(
+
+                    color: Colors.red.shade700,
                     elevation: 5,
                     borderRadius: BorderRadius.circular(30.0),
                     child: MaterialButton(
                       child: Text(
                         'Sign in',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
 
                       ),
                       onPressed: () {
