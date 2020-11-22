@@ -71,6 +71,21 @@ class _VolunteersListState extends State<VolunteersList> {
 
                     backgroundImage: NetworkImage('https://ui-avatars.com/api/?name=${UserProfileList[index]['name']}'),
                   ),
+                  trailing: Wrap(
+                    spacing: 12, // space between two icons
+                    children: <Widget>[
+                      Text('B+',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                      ),),
+                      SizedBox(width: 10,),
+                      InkWell(
+                          onTap: (){
+
+                          },
+                          child: Icon(Icons.call)), // icon-2
+                    ],
+                  ),
 
                 ),
               ),

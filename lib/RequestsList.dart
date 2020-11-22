@@ -66,10 +66,26 @@ class _RequestsListState extends State<RequestsList> {
               child: Card(
                 child: ListTile(
                   title:Text(UserProfileList[index]['Postname']) ,
-                  subtitle: Text(UserProfileList[index]['neededbloodgroup']),
+                  subtitle: Text('BG required: ${UserProfileList[index]['neededbloodgroup']}'),
                   leading: CircleAvatar(
 
                     backgroundImage: NetworkImage('https://ui-avatars.com/api/?name=${UserProfileList[index]['name']}'),
+                  ),
+                  trailing: Wrap(
+                    spacing: 12, // space between two icons
+                    children: <Widget>[
+                      InkWell(
+                          onTap: (){
+
+                          },
+                          child: Icon(Icons.call)), // icon-1
+                      SizedBox(width: 10,),
+                      InkWell(
+                          onTap: (){
+
+                          },
+                          child: Icon(Icons.message)), // icon-2
+                    ],
                   ),
 
                 ),

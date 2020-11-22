@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
 
       theme: ThemeData.light(),
-      home:SigninScreen(),
+      home:BottomNavigationBarController(),
 
 
     );

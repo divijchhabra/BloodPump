@@ -48,10 +48,10 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            MessagesStream(),
+
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
@@ -71,7 +71,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       messageTextController.clear();
                       _firestore.collection('messages').add({
                         'text': messageText,
-                        'sender': loggedInUser.email,
+
                       });
                     },
                     child: Text(
@@ -108,7 +108,7 @@ class MessagesStream extends StatelessWidget {
           // final messageText = message.data['text'];
           // final messageSender = message.data['sender'];
 
-          final currentUser = loggedInUser.email;
+
 
           final messageBubble = MessageBubble(
             // sender: messageSender,
